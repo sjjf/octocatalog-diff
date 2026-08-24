@@ -1,4 +1,5 @@
-ARG RUBY_VERSION="2.6"
+ARG RUBY_VERSION="3.2.11"
+
 FROM ruby:${RUBY_VERSION} as ruby
 ARG RUBY_VERSION
 ENV RUBY_VERSION="${RUBY_VERSION}"
@@ -14,7 +15,6 @@ COPY --from=ruby / /
 WORKDIR /app
 ENV LANG="C.UTF-8"
 COPY . .
-#RUN gem install bundler -v 1.17.2
 RUN script/bootstrap
 
 CMD ["/app/script/cibuild"]
