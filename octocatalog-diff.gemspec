@@ -2,16 +2,17 @@ Gem::Specification.new do |s|
   s.name        = 'octocatalog-diff'
   s.version     = ENV['OCTOCATALOG_DIFF_VERSION'] || File.read(File.join(__dir__, '.version')).strip
   s.license     = 'MIT'
-  s.authors     = ['SysEleven GmbH', 'GitHub, Inc.', 'Kevin Paulisse']
-  s.email       = ['opensource@syseleven.de']
-  s.homepage    = 'https://github.com/syseleven/octocatalog-diff'
+  s.authors     = ['Simon Fowler', 'SysEleven GmbH', 'GitHub, Inc.', 'Kevin Paulisse']
+  s.email       = ['simon.fowler@anu.edu.au']
+  s.homepage    = 'https://github.com/sjjf/octocatalog-diff'
   s.summary     = 'Compile OpenVox/Puppet catalogs from 2 branches, versions, etc., and compare them.'
   s.description = <<~DESC
     Octocatalog-Diff assists with Puppet/OpenVox development and testing by enabling the
     user to compile 2 catalogs and compare them. It is possible to compare different
     branches, different versions, and different fact values. This is intended to be run
-    from a local development environment or in CI. This is the SysEleven fork, updated
-    for OpenVox 8 and Ruby >= 3.2.
+    from a local development environment or in CI. This is the NCI fork, based on the
+    SysEleven fork which updates the code for OpenVox 8 and Ruby >= 3.2, along with other
+    pending merge requests from the original repository.
   DESC
 
   s.files = Dir.glob('doc/**/*.md') \
@@ -23,11 +24,10 @@ Gem::Specification.new do |s|
   s.required_ruby_version = ['>= 3.2', '< 4']
 
   s.metadata = {
-    'github_repo' => 'ssh://github.com/syseleven/octocatalog-diff',
-    'homepage_uri' => 'https://github.com/syseleven/octocatalog-diff',
-    'source_code_uri' => 'https://github.com/syseleven/octocatalog-diff',
-    'bug_tracker_uri' => 'https://github.com/syseleven/octocatalog-diff/issues',
-    'changelog_uri' => 'https://github.com/syseleven/octocatalog-diff/blob/master/doc/CHANGELOG.md',
+    'github_repo' => 'ssh://github.com/sjjf/octocatalog-diff',
+    'source_code_uri' => 'https://github.com/sjjf/octocatalog-diff',
+    'bug_tracker_uri' => 'https://github.com/sjjf/octocatalog-diff/issues',
+    'changelog_uri' => 'https://github.com/sjjf/octocatalog-diff/blob/master/doc/CHANGELOG.md',
   }
 
   s.add_runtime_dependency 'diffy', '>= 3.4', '< 4'
